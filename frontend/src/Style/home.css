@@ -1,7 +1,56 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
 .homes{
-    padding: 100px;
+    padding: 80px;
     height: 100vh;
-    background-color: rgb(137, 179, 215);
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    
 
 
+
+}
+.homeword{
+    font-family: 'Roboto',sans-serif;
+    font-weight: 700;
+    font-size: 25px;
+   background: linear-gradient(to right, #ff7e5f, #feb47b);
+   width:50%;
+    -webkit-background-clip: text;
+     color: transparent;
+     margin-right: 20px;
+     padding: 50px;
+    
+}
+.specialword{ 
+      background: linear-gradient(to right, #0f0c0c, #000000);
+    -webkit-background-clip: text;
+     color: transparent;
+}
+
+.circlegrad
+{
+   position: absolute; /* Position it absolutely to the container */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    width: 300px; /* Adjust the size as needed */
+    height: 300px; /* Same as width for a circle */
+    background: radial-gradient(circle, rgba(255, 0, 150, 0.7), rgba(0, 204, 255, 0.7)); /* Gradient colors */
+    border-radius: 50%; /* Makes it a circle */
+    transform: translate(40%,-90%); /* Center the circle */
+    z-index: 1; /* Place it behind the image */
+    
+
+}
+.imagesection{
+    
+position:relative;
+    display:inline-block;
+   
+
+  
+  
+   
 }
