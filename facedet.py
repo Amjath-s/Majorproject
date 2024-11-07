@@ -1,38 +1,37 @@
 import cv2
 from deepface import DeepFace
 
-def detect_and_recognize(frame):
-    face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
-    faces = face_cascade.detectMultiScale(frame, 1.1, 4)
-
-    for (x, y, w, h) in faces:
-        face_roi = frame[y:y+h, x:x+w]
-
-        try:
-            result = DeepFace.analyze(face_roi, actions=['emotion'], enforce_detection=False)
-            emotion = result['dominant_emotion']
-
-            cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 2)
-            cv2.putText(frame, emotion, (x, y-10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 255, 0), 2)
-
-        except Exception as e:
-            print(f"Error analyzing emotion: {e}")
-
-    return frame
-
-# Start the video capture
 cap = cv2.VideoCapture(0)
+previous_emotion = None
 
 while True:
     ret, frame = cap.read()
-
     if not ret:
         break
 
-    frame = detect_and_recognize(frame)
+    try:
+        # Analyze emotion in the frame
+        result = DeepFace.analyze(frame, actions=['emotion'], enforce_detection=False)
+        
+        # Check if result is a list (multiple faces) or dictionary (single face)
+        if isinstance(result, list):
+            emotion_label = result[0]['dominant_emotion']
+        else:
+            emotion_label = result['dominant_emotion']
+        
+        # Check if the emotion has changed before drawing the rectangle
+        if emotion_label != previous_emotion:
+            # Draw rectangle with emotion label if changed
+            cv2.putText(frame, emotion_label, (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
+            previous_emotion = emotion_label
 
+    except Exception as e:
+        print("Error analyzing emotion:", e)
+
+    # Show the video feed with emotion label
     cv2.imshow('Emotion Detection', frame)
 
+    # Press 'q' to exit the loop
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
