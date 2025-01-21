@@ -9,7 +9,13 @@ const Signup = () => {
   const navigate = useNavigate();
 
   const handleSignup = async () => {
-    console.log("signup clicked")
+    const { name, email, password } = formData;
+
+    if (!name || !email || !password) {
+      setError("All fields are required");
+      return;
+    }
+
     try {
       const res = await axios.post("http://localhost:5005/signup", {
         name,
