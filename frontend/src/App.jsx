@@ -19,43 +19,18 @@ function App() {
   
   return (
     <>
-      {/* <NavBar />
-        <Home/>
-        <About/>
-        <Call/>
-        <Footer/>  */}
-
-      {/* <Routes> 
-
-          <Route path='/login' element={<Login/>}/>
-         
-        </Routes> */}
-
-      {/* <Home/> */}
-
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route
-          path="/contact"
-          element={
-            <>
-              <Call />
-              <Footer />
-            </>
-          }
-        />
         <Route path="/login" element={<Login />} />
-
         <Route
-          path="/dashboard"
+          path="/dashboard/*"
           element={
             <ProtectedRoute>
               <Dashboard />
             </ProtectedRoute>
           }
         />
-        <Route path="/signup" element={<Signup/>} />
+        <Route path="/signup" element={<Signup />} />
       </Routes>
     </>
   );

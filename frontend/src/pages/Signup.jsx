@@ -9,8 +9,9 @@ const Signup = () => {
   const navigate = useNavigate();
 
   const handleSignup = async () => {
+    console.log("signup clicked")
     try {
-      const res = await axios.post("http://localhost:5005/api/auth/signup", {
+      const res = await axios.post("http://localhost:5005/signup", {
         name,
         email,
         password,
