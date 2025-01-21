@@ -1,0 +1,17 @@
+.login-form{
+
+    /* max-width: max-content;
+    max-height: max-content; */
+    background-color: rgb(40, 206, 28);
+    width:350px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+}
+.login-detaiil
+{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    
+}

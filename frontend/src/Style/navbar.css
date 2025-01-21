@@ -1,14 +1,16 @@
 .navbar{
-    background-color: blue;
+    background-color: rgb(101, 101, 172);
     width: 100%;
-    display: flex;
+    display:flex;
+    flex-direction: row;
     height: 50px;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     top:0;
     position:sticky;
-    margin: 0 auto;
-    padding:0;
+    margin: 0 ;
+    padding: 0 1rem;
+
 
 }
 .navbar ul {
@@ -26,5 +28,13 @@
 
 .navbar ul li a:hover {
   text-decoration: underline; /* Underline on hover */
+}
+
+.logo h2{
+  font-style: italic;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: medium;
+  color: white;
+ 
 }
 
