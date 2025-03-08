@@ -1,0 +1,17 @@
+/* .dashboard_view
+{
+    display: flex;
+    flex-direction: row;
+    background-color: red;
+  
+} */
+ .container22{
+    display: flex;
+ }
+.main_dash{
+    /* background-color: aliceblue; */
+    margin-left: 18%;
+    width: 100%;
+
+
+}

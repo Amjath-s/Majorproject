@@ -11,7 +11,7 @@ function NavBar()
             <h2>ADPATI-LEARN </h2>
           </div>
           <ul>
-            {/* <li>
+            <li>
               <a href="#home">Home</a>
             </li>
             <li>
@@ -19,9 +19,9 @@ function NavBar()
             </li>
             <li>
               <a href="#contact">Contact</a>
-            </li> */}
+            </li>
 
-            <li>
+            {/* <li>
               <Link to="/">Home</Link>
             </li>
             <li>
@@ -29,7 +29,7 @@ function NavBar()
             </li>
             <li>
               <Link to="/contact">Contact</Link>
-            </li>
+            </li> */}
           </ul>
           <LoginButton />
         </div>

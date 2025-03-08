@@ -1,10 +1,11 @@
 import '../Style/call.css'
+import "../Component/NavBar"
 
 function Call()
 {
     return (
       <>
-     
+        <NavBar/>
         <div id="contact" className="contacts">
           <div className="contact-form">
             <h1>Get in touch</h1>

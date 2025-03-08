@@ -1,67 +1,111 @@
-import React, { useState } from "react";
 
-function LoginForm() {
+
+// // export default LoginForm;
+// import "../Style/form.css";
+
+
+
+// import { useState } from "react";
+// import axios from "axios";
+// import { useNavigate } from "react-router-dom";
+
+// const Login = () => {
+//   const [email, setEmail] = useState("");
+//   const [password, setPassword] = useState("");
+//   const [error, setError] = useState(""); // To handle errors
+//   const navigate = useNavigate();
+
+//   const handleLogin = async () => {
+//     console.log("hlkk");
+//     try {
+//       const res = await axios.post("http://localhost:5005/login", {
+//         email,
+//         password,
+//       });
+
+//       localStorage.setItem("token", res.data.token);
+    
+//       alert(res.data.msg);
+//       navigate("/dashboard"); // Redirect to dashboard after successful login
+//     } catch (error) {
+//       setError("Invalid login credentials");
+//     }
+//   };
+
+//   return (
+//     <div>
+//       <h2>Login</h2>
+//       {error && <p>{error}</p>}
+//       <input
+//         type="email"
+//         placeholder="Email"
+//         value={email}
+//         onChange={(e) => setEmail(e.target.value)}
+//       />
+//       <input
+//         type="password"
+//         placeholder="Password"
+//         value={password}
+//         onChange={(e) => setPassword(e.target.value)}
+//       />
+//       <button
+//         onClick={() => {
+//           console.log("Button Clicked");
+//           handleLogin();
+//         }}
+//       >
+//         Login
+//       </button>
+//     </div>
+//   );
+// };
+
+// export default Login;
+
+import { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
+function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    // Add your login logic here
-    console.log("Email:", email);
-    console.log("Password:", password);
+    try {
+      const res = await axios.post("http://localhost:5005/login", {
+        email,
+        password,
+      });
+      localStorage.setItem("token", res.data.token); // Save token
+      alert("Login successful!");
+      navigate("/dashboard"); // ✅ Redirect after login
+    } catch (err) {
+      console.error("Login Error:", err);
+      alert("Invalid credentials");
+    }
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      style={{
-        maxWidth: "300px",
-        margin: "0 auto",
-        display: "block",
-        textAlign: "center",
-        justifyContent: "center",
-      }}
-    >
-      <h2>Login</h2>
-
-      <div style={{ marginBottom: "15px" }}>
-        <label htmlFor="email">Email:</label>
-        <input
-          type="email"
-          id="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-          style={{ width: "100%", padding: "8px", marginTop: "5px" }}
-        />
-      </div>
-
-      <div style={{ marginBottom: "15px" }}>
-        <label htmlFor="password">Password:</label>
-        <input
-          type="password"
-          id="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-          style={{ width: "100%", padding: "8px", marginTop: "5px" }}
-        />
-      </div>
-
-      <button
-        type="submit"
-        style={{
-          width: "100%",
-          padding: "10px",
-          display: "flex",
-          textAlign: "center",
-          justifyContent: "center",
-        }}
-      >
-        Login
-      </button>
+    <form onSubmit={handleLogin}>
+      <input
+        type="email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        placeholder="Email"
+        required
+      />
+      <input
+        type="password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        placeholder="Password"
+        required
+      />
+      <button type="submit">Login</button>
     </form>
   );
 }
 
-export default LoginForm;
+export default Login;

@@ -1,0 +1,8 @@
+[33mca25bc0[m[33m ([m[1;36mHEAD[m[33m, [m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m HEAD@{0}: reset: moving to origin/main
+[33m96303c3[m HEAD@{1}: pull --rebase origin main (start): checkout 96303c350f0dc491d8e7fa61109bdec700900d27
+[33mca25bc0[m[33m ([m[1;36mHEAD[m[33m, [m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m HEAD@{2}: commit: landing and database
+[33maa9cc4e[m HEAD@{3}: reset: moving to HEAD
+[33maa9cc4e[m HEAD@{4}: commit: landing and login is done
+[33m42f2d80[m HEAD@{5}: Branch: renamed refs/heads/main to refs/heads/main
+[33m42f2d80[m HEAD@{7}: Branch: renamed refs/heads/main to refs/heads/main
+[33m42f2d80[m HEAD@{9}: commit (initial): Initial commit
