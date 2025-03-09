@@ -45,12 +45,6 @@ function Dashboard() {
 
       <div className="dashboard_view">
         <Dashboardside />
-
-        {/* <div className="main_dash">
-          <Routes>
-            <Route path="Ask" element={<Ask />} />
-          </Routes>
-        </div> */}
       </div>
       <div className="main_dash">
           <Routes>
@@ -66,6 +60,8 @@ function Dashboard() {
     </>
   );
   
+
+
   
   
   

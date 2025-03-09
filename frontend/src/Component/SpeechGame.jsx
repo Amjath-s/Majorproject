@@ -12,7 +12,8 @@ function SpeechGame() {
   // Fetch words from API when component mounts
   useEffect(() => {
     fetch(
-      "https://random-word-api.vercel.app/api?words=150&length=4"
+    "https://random-word-api.vercel.app/api?words=30&length=4"
+
     ) // API to get words
       .then((response) => response.json())
       .then((data) => {

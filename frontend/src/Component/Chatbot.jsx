@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import axios from "axios";
 
-const API_KEY = "AIzaSyBw24xXTxLFbv6N6LyV1RnrGliyRVdKEDc"; // Replace with your actual Gemini API key
+const API_KEY = "AIzaSyAaHFwHKxT2R4YLqYdrsGMMU6UZ5ZeSWaA"; 
 
 function Chatbot() {
   const [messages, setMessages] = useState([]);
