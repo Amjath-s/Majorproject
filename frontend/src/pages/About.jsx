@@ -12,7 +12,7 @@ function About() {
             interactive learning experiences for students with disability. The
             platform leverages advanced AI technologies to facilitate
             response-based interactions, featuring engaging animated video
-            responses that adapt to the student's behaviour and learning
+            responses that adapt to the student's behavior and learning
             preferences.
           </p>
         </div>
