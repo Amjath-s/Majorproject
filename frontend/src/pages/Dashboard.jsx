@@ -8,7 +8,7 @@ import "../Style/dashboard.css";
 import StressChecker from "../Component/Stresschecker";
 import StressCheck from "../Component/StressCheck";
 import SpeechGame from "../Component/SpeechGame";
-import AlphabetGame from "./AlphabetGame";
+import AlphabetGame from "../Component/alphabetgame";
 
 function Dashboard() {
 //   const [user, setUser] = useState(null);
@@ -59,7 +59,7 @@ function Dashboard() {
             <Route path="Analyser" element={<StressChecker/>}/>
             <Route path="StressCheck" element={<StressCheck/>}/>
             <Route  path="game" element={<SpeechGame/>}/>
-            <Route path="game" element={<AlphabetGame />} />
+            <Route path="game" element={<AlphabetGame/>} />
           </Routes>
 
         </div>
