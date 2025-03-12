@@ -1,0 +1,100 @@
+.game-container {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+.balls-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.ball {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  cursor: grab;
+  user-select: none;
+}
+
+.boxes-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.color-box {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #333;
+  color: white;
+  font-weight: bold;
+}
+
+.reset-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.reset-button:hover {
+  background-color: #0056b3;
+}
+
+/* Animated Feedback Pop-Up */
+.feedback-popup {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 10px;
+  animation: popUp 0.5s ease, fadeOut 1.5s 0.5s ease forwards;
+}
+
+.feedback-popup.success {
+  background-color: #4caf50;
+  color: white;
+}
+
+.feedback-popup.error {
+  background-color: #f44336;
+  color: white;
+}
+
+/* Pop-Up Animation */
+@keyframes popUp {
+  from {
+    transform: translate(-50%, -60%) scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Fade-Out Animation */
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+}
