@@ -1,0 +1,71 @@
+.abouts{
+    background-color: rgb(255, 255, 255);
+    height: 80vh;
+    padding: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+
+}
+.aiminfo{
+    width: 400px;
+    background-color: beige;
+    box-shadow: 10px;
+    border-radius: 15px;
+    
+
+}
+.aiminfo h4{
+margin: 20px;
+text-align: center;
+
+}
+.aiminfo p{
+    font-size: large;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align:justify;
+}
+
+.missioninfo{
+    width: 400px;
+   
+    box-shadow: 10px;
+    border-radius: 15px;
+      background-color: beige;
+
+}
+.missioninfo h4{
+    margin: 20px;
+    text-align: center;
+}
+.missioninfo p{
+    padding: 20px;
+    font-size: large;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     
+      text-align:justify;
+}
+.someinfo{
+    width: 400px;
+    /* background-color: burlywood; */
+      background-color: beige;
+}
+.someinfo h4{
+    margin: 20px;
+    text-align: center;
+   
+
+}
+.someinfo p{
+    font-size: large;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   
+    text-align:justify;
+}
+
+.abouttext{
+    display: block;
+}

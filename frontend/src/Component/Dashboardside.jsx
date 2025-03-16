@@ -88,6 +88,9 @@ function Dashboardside() {
                 <FaGrimace></FaGrimace>
                 <Link to ="/dashboard/analyser">STRESS CHECK</Link>
               </li>
+              <li>
+                <Link to="/dashboard/alphabet">ANALYSER</Link>
+              </li>
             </ul>
           </div>
           <div className="sidebarbtm_logout">

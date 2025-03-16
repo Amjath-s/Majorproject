@@ -230,6 +230,35 @@ if (!API_KEY) {
 //     res.status(500).json({ error: "Analysis failed" });
 //   }
 // });
+import PersonalDetails from "./Details.js";
+app.post("/submit", async (req, res) => {
+  const { name, dob, age, email, phone } = req.body;
+
+  try {
+    const newDetails = new PersonalDetails({ name, dob, age, email, phone });
+    await newDetails.save();
+    res.status(201).json({ message: "Data successfully saved!" });
+  } catch (error) {
+    res.status(500).json({ error: "Failed to save data" });
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // ✅ MONGOOSE CONNECTION
 mongoose
