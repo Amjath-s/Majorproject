@@ -3,9 +3,9 @@ import { Route, Router,Routes } from "react-router-dom"
 import './Style/navbar.css'
 import './app.css'
 import Home from  '../src/pages/Home'
-import About from "./pages/About"
-import Call from '../src/pages/Call'
-import Footer from "./pages/Footer"
+// import About from "./pages/About"
+// import Call from '../src/pages/Call'
+//  
 import Login from "./pages/Login"
 import Dashboard  from "./pages/Dashboard"
 import ProtectedRoute from "./pages/ProtectRoute"

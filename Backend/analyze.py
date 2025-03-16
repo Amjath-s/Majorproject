@@ -83,36 +83,36 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
 
 
-import cv2
-import sys
-import json
-import numpy as np
-import mediapipe as mp
+# import cv2
+# import sys
+# import json
+# import numpy as np
+# import mediapipe as mp
 
-mp_face_detection = mp.solutions.face_detection
-face_detection = mp_face_detection.FaceDetection(min_detection_confidence=0.5)
+# mp_face_detection = mp.solutions.face_detection
+# face_detection = mp_face_detection.FaceDetection(min_detection_confidence=0.5)
 
-cap = cv2.VideoCapture(0)
+# cap = cv2.VideoCapture(0)
 
-if not cap.isOpened():
-    print("Error: Could not access webcam")
-    exit()
+# if not cap.isOpened():
+#     print("Error: Could not access webcam")
+#     exit()
 
-while cap.isOpened():
-    ret, frame = cap.read()
-    if not ret:
-        break
+# while cap.isOpened():
+#     ret, frame = cap.read()
+#     if not ret:
+#         break
 
-    rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-    results = face_detection.process(rgb_frame)
+#     rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+#     results = face_detection.process(rgb_frame)
 
-    stress_level = 0
-    if results.detections:
-        stress_level = np.random.randint(10, 100)  # Simulate stress data
+#     stress_level = 0
+#     if results.detections:
+#         stress_level = np.random.randint(10, 100)  # Simulate stress data
 
-    # Output stress data as JSON
-    print(json.dumps({"stress": stress_level}))
-    sys.stdout.flush()
+#     # Output stress data as JSON
+#     print(json.dumps({"stress": stress_level}))
+#     sys.stdout.flush()
 
-cap.release()
-cv2.destroyAllWindows()
+# cap.release()
+# cv2.destroyAllWindows()

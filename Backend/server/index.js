@@ -1,4 +1,3 @@
-
 // import mongoose from "mongoose";
 // import dotenv from "dotenv";
 // import cors from "cors";
@@ -8,13 +7,12 @@
 
 // dotenv.config();
 
-
 // const app=express();
 
 // app.use(cors());
 // app.use(express.json());
 
-// //Routing 
+// //Routing
 
 // // app.use('/api/auth',router);
 // //connecting database
@@ -37,7 +35,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import { urlencoded } from "express";
 import mongoose from "mongoose";
-import User from "./user.mjs";
+import User from "./user.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 
@@ -92,9 +90,10 @@ app.post("/login", async (req, res) => {
     if (!user) {
       return res.status(404).json({ msg: "User does not exist" });
     }
-
-    // 🔹 FIXED PASSWORD CHECK
     const isMatch = await bcrypt.compare(password, user.password);
+    console.log("Entered Password:", password);
+    console.log("Stored Hashed Password:", user.password);
+    console.log("Password Match Result:", isMatch);
     if (!isMatch) {
       return res.status(401).json({ msg: "Invalid credentials" });
     }
@@ -135,10 +134,8 @@ app.get("/dashboard", async (req, res) => {
   }
 });
 
-
 //chatapikey call
 import axios from "axios";
-
 
 const API_KEY = process.env.OPENAI_API_KEY;
 if (!API_KEY) {
@@ -177,8 +174,6 @@ if (!API_KEY) {
 //     res.status(500).json({ reply: "Error: Unable to get a response" });
 //   }
 // });
-
-
 
 // const tf = require("@tensorflow/tfjs-node");
 // const faceapi = require("@vladmandic/face-api");
@@ -235,6 +230,28 @@ if (!API_KEY) {
 //     res.status(500).json({ error: "Analysis failed" });
 //   }
 // });
+import PersonalDetails from "./Details.js";
+app.post("/submit", async (req, res) => {
+  const { name, dob, age, email, phone } = req.body;
+
+  try {
+    const newDetails = new PersonalDetails({ name, dob, age, email, phone });
+    await newDetails.save();
+    res.status(201).json({ message: "Data successfully saved!" });
+  } catch (error) {
+    res.status(500).json({ error: "Failed to save data" });
+  }
+});
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -252,5 +269,3 @@ mongoose
 app.listen(5005, () => {
   console.log("Server is running on port 5005");
 });
-
-

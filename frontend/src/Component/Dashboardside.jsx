@@ -88,6 +88,9 @@ function Dashboardside() {
                 <FaGrimace></FaGrimace>
                 <Link to ="/dashboard/analyser">STRESS CHECK</Link>
               </li>
+              <li>
+                <Link to="/dashboard/alphabet">ANALYSER</Link>
+              </li>
             </ul>
           </div>
           <div className="sidebarbtm_logout">
@@ -99,5 +102,61 @@ function Dashboardside() {
       </div>
     </>
   );
+
+
+  // return (
+  //   <>
+  //     <div
+  //       className="containerdash"
+  //       style={{
+  //         display: "flex",
+  //         flexDirection: "row",
+
+  //         background: "linear-gradient(to right, #4A90E2, #145DA0)",
+  //         width: "100%",
+  //         height: "10%",
+  //       }}
+  //     >
+  //       <div
+  //         className="profilecontainer"
+  //         style={{
+  //           paddingLeft: "30px",
+  //           margin: "10px",
+  //           display: "flex",
+  //           flexDirection: "row",
+  //           justifyContent: "flex-start",
+  //           alignItems: "center",
+
+  //           width: "100%",
+  //         }}
+  //       >
+  //         <div
+  //           className="profile"
+  //           style={{
+  //             width: "50px",
+  //             height: "50px",
+  //             borderRadius: "50%",
+  //             display: "flex",
+  //             justifyContent: "center",
+  //             alignItems: "center",
+  //           }}
+  //         >
+  //           <img
+  //             src="https://www.w3schools.com/howto/img_avatar.png"
+  //             alt="profile"
+  //           />
+  //         </div>
+  //         <div className="profileinfo" style={{display:"flex",flexDirection:"row",padding:"10px",fontFamily:"poppins",fontSize:"600"}}>
+  //           <h4>Welcome  </h4>
+  //           <h5>
+  //             {user
+  //               ? user.name.charAt(0).toUpperCase() + user.name.slice(1)
+  //               : "Loading..."}
+  //           </h5>
+  //         </div>
+  //       </div>
+  //     </div>
+  //   </>
+  // );
 }
 export default Dashboardside;
